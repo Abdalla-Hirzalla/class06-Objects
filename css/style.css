@@ -1,0 +1,19 @@
+body{
+    background-color: teal;
+}
+
+
+div ul li {
+    color: tomato;
+  font-size: 150%;
+}
+
+h1{
+    color: black;
+    text-align: center;
+    font-size:  500%;
+}
+
+img{
+    margin-left: 20%;
+}
