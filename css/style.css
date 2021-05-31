@@ -3,9 +3,13 @@ body{
 }
 
 
-div ul li {
-    color: tomato;
-  font-size: 150%;
+div table,th,td {
+    border: solid brown 5px;
+    border-collapse: collapse;
+    color: black;
+   font-size: 150%;
+  
+  
 }
 
 h1{
