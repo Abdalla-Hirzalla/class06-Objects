@@ -1,5 +1,5 @@
 body{
-    background-color: teal;
+    background-color: rgb(100, 100, 100);
 }
 
 
@@ -22,3 +22,28 @@ img{
     margin-left: 30%;
     width :40%
 }
+
+p{
+    margin-left: 25%;
+    font-size: 250%;
+    
+}
+p,a{
+   
+    color: black;
+}
+
+.contuner1{
+    margin-left: 50%;
+  
+   
+}
+
+.contuner2{
+margin-right: 50%;
+}
+
+.contuner3{
+    margin-left: 40%;
+    }
+    
