@@ -101,9 +101,6 @@ Location.prototype.custperhour = function () {
    let sum = 0;
    for (let i = 0; i < hours.length; i++) {
 
-      // this.min = randomNumber(min);
-      // this.max =  randomNumber(max);
-
       sum = randomNumber(this.min, this.max) * this.avg;
       let calc = Math.floor(sum);
       this.randomHoursArray.push(calc);
@@ -130,15 +127,15 @@ Location.prototype.renderA = function () {
 
 }
 let Seattle = new Location('Seattle', 23, 65, 6.3, 0, []);
-//  console.log(Seattle);
+
 let Tokyo = new Location('Tokyo', 3, 24, 1.2, 0, []);
-//  console.log(Tokyo);
+
 let Dubai = new Location('Dubai', 11, 38, 3.7, 0, []);
-//  console.log(Dubai);
+
 let Paris = new Location('Paris', 20, 38, 2.3, 0, []);
-// console.log(Paris);
+
 let Lima = new Location('Lima', 2, 16, 4.6, 0, []);
-//  console.log(Lima);
+
 
 
 headerRow();
