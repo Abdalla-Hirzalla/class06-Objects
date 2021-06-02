@@ -139,6 +139,7 @@ let Lima = new Location('Lima', 2, 16, 4.6, 0, []);
 
 
 headerRow();
+
 for (let i = 0; i < locationArr.length; i++) {
    locationArr[i].custperhour();
    locationArr[i].renderA();
