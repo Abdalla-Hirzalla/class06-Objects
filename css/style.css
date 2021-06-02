@@ -4,10 +4,10 @@ body{
 
 
 div table,th,td {
-    border: solid brown 5px;
+    border: solid brown 3px;
     border-collapse: collapse;
     color: black;
-   font-size: 150%;
+   font-size: 130%;
   
   
 }
@@ -15,12 +15,12 @@ div table,th,td {
 h1{
     color: black;
     text-align: center;
-    font-size:  500%;
+    font-size:  300%;
 }
 
 img{
     margin-left: 30%;
-    width :40%
+    width :20%
 }
 
 p{
