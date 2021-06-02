@@ -40,13 +40,13 @@ function footerRow() {
    let lastRow = document.createElement('tr');
    table.appendChild(lastRow);
 
-   let totaData = document.createElement('td');
+   let totaData = document.createElement('th');
    lastRow.appendChild(totaData);
 
    totaData.textContent = 'Total';
 
    for (let j = 0; j < 13; j++) {
-      let tdL = document.createElement('td');
+      let tdL = document.createElement('th');
       let totalB = 0;
       for (let x = 0; x < locationArr.length; x++) {
          totalB += locationArr[x].randomHoursArray[j];
@@ -58,7 +58,7 @@ function footerRow() {
    for (let y = 0; y < locationArr.length; y++) {
       totalLastCell += locationArr[y].total;
    }
-   let totaData1 = document.createElement('td');
+   let totaData1 = document.createElement('th');
    lastRow.appendChild(totaData1);
    totaData1.textContent = totalLastCell;
 
@@ -94,11 +94,13 @@ function Location(countryName, min, max, avg, total, randomHoursArray) {
    this.total = total
    locationArr.push(this);
 
+
 }
 
 Location.prototype.custperhour = function () {
 
    let sum = 0;
+   // console.log(this.randomHoursArray);
    for (let i = 0; i < hours.length; i++) {
 
       sum = randomNumber(this.min, this.max) * this.avg;
@@ -126,6 +128,41 @@ Location.prototype.renderA = function () {
    td2.textContent = this.total;
 
 }
+
+let locationForm = document.getElementById('form');
+
+console.log(locationForm);
+
+locationForm.addEventListener('submit',submitter);
+
+
+function submitter (event){
+   event.preventDefault();
+   let userName = event.target.namefield.value;
+   let min = Number(event.target.minfield.value);
+   let max = Number(event.target.maxfield.value);
+   let avg = Number(event.target.avgfield.value);
+   if ( min> max) {
+      alert('choose min less than max')
+   }else{
+      
+  let newForm= new Location (userName,min,max,avg,0,[]);
+  newForm.custperhour();
+  newForm.renderA();
+  
+ table.textContent=' ';
+ headerRow();
+  for (let i = 0; i < locationArr.length; i++) {
+   locationArr[i].custperhour();
+   locationArr[i].renderA();
+  }
+
+  footerRow();
+}
+}
+
+
+
 let Seattle = new Location('Seattle', 23, 65, 6.3, 0, []);
 
 let Tokyo = new Location('Tokyo', 3, 24, 1.2, 0, []);
@@ -138,12 +175,17 @@ let Lima = new Location('Lima', 2, 16, 4.6, 0, []);
 
 
 
+
+
+
+
 headerRow();
 
 for (let i = 0; i < locationArr.length; i++) {
    locationArr[i].custperhour();
    locationArr[i].renderA();
 }
+
 
 footerRow();
 
